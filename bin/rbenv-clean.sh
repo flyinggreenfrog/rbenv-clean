@@ -24,5 +24,4 @@ for ruby in $RUBIES; do
     echo $ruby
     rbenv local $ruby
     uninstall
-    done
-}
+done
