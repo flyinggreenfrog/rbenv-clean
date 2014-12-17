@@ -1,4 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+# Summary: Cleanup gems for all versions
+#
+# Usage: rbenv clean
+
 
 uninstall() {
     list=`gem list --no-versions`
