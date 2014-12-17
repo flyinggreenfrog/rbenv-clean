@@ -3,7 +3,8 @@
 # Summary: Cleanup gems for all versions
 #
 # Usage: rbenv clean
-
+#
+# rbenv-clean(1) cleans up all gems from all versions of installed rubies
 
 uninstall() {
     list=`gem list --no-versions`

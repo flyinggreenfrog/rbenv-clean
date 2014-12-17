@@ -1,9 +1,11 @@
 PREFIX = /usr/local/bin
+SRC = bin/rbenv-clean.sh
 
-install: bin/rbenv-clean
-	@cp -p $< $(PREFIX)/rbenv-clean
+install:
+	@cp -p $(SRC) $(PREFIX)/rbenv-clean
 	echo "rbenv-clean(1) installed"
 	rbenv help clean
+
 uninstall:
 	rm -rf $(PREFIX)/rbenv-clean
 
