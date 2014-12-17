@@ -3,8 +3,8 @@ like `gem-clean(1)` on steriods
 
 
 ## Installation
-`$ git clone https://github.com/sableloki/rbenv-clean && cd rbenv-clean`
-`$ make install`
+- `$ git clone https://github.com/sableloki/rbenv-clean && cd rbenv-clean`
+- `$ make install`
 
 ## Usage
 `rbenv-clean(1)` is a plugin the cleans all gems installed on your system on all systems
