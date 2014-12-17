@@ -27,6 +27,7 @@ EOF
 }
 
 #
+
 # Output version.
 #
 
@@ -35,7 +36,6 @@ version() {
 }
 
 gems() {
-
     uninstall() {
         list=`gem list --no-versions`
         for gem in $list; do
@@ -55,7 +55,6 @@ gems() {
         rbenv local $ruby
         uninstall
     done
-
 }
 
 rubies() {
@@ -67,6 +66,5 @@ rubies() {
 }
 
 all() {
-    gems()
-    rubies()
+    echo "Coming Soon"
 }
