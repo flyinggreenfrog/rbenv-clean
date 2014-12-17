@@ -65,3 +65,8 @@ rubies() {
     done
     rbenv versions
 }
+
+all() {
+    gems()
+    rubies()
+}
