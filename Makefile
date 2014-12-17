@@ -8,4 +8,4 @@ install:
 uninstall:
 	rm -rf $(PREFIX)/rbenv-clean
 
-.PHONY: install
+.PHONY: install uninstall
