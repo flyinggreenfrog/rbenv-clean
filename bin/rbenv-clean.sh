@@ -17,7 +17,6 @@ usage() {
   Options:
     -h, --help           output help information
     -v, --version        display version number
-    -r, --restore        restore installed versions
 
   Commands:
     help                 display usage
@@ -60,7 +59,9 @@ gems() {
 }
 
 rubies() {
-    uninstall() {
-
-    }
+    list=`rbenv versions`
+    for rb in $list; do
+        rbenv uninstall $rb
+    done
+    rbenv versions
 }
