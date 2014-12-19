@@ -25,3 +25,6 @@ for ruby in $RUBIES; do
     rbenv local $ruby
     uninstall
 done
+
+# Remove .ruby-version after clean is done;
+rm -rf .ruby-version
