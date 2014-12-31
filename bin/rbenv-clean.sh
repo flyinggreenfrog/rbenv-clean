@@ -15,6 +15,15 @@ uninstall() {
     gem install bundler
 }
 
+remove_rubies() {
+    list=`rbenv versions`
+    for rb in $list; do
+        rbenv uninstall $rb
+    done
+    rbenv versions
+    rbenv install 2.0.0
+}
+
 #rbenv versions --bare
 RBENVPATH=`rbenv root`
 echo $RBENVPATH
@@ -25,6 +34,11 @@ for ruby in $RUBIES; do
     rbenv local $ruby
     uninstall
 done
+
+if [[ $2 == "--rubies" || "-r" ]]; then
+    rbenv local system
+    remove_rubies
+fi
 
 # Remove .ruby-version after clean is done;
 rm -rf .ruby-version
