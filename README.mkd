@@ -41,3 +41,7 @@ rake (10.1.0)
 rdoc (4.1.0)
 test-unit (2.1.5.0)
 ```
+
+> --rubies
+
+optionally you can pass the `--rubies flag` to uninstall rubies aswell
