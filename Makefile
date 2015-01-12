@@ -1,4 +1,4 @@
-PREFIX = /usr/local/bin
+PREFIX = /usr/local/opt/rbenv-clean
 SRC = bin/rbenv-clean.sh
 
 install:
