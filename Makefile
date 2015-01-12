@@ -1,7 +1,11 @@
-PREFIX = /usr/local/bin
+PREFIX = $(RBENV_ROOT)/plugins
 SRC = bin/rbenv-clean.sh
 
 install:
+
+	if [[ ! -d $(PREFIX)]]; then \
+		sudo mkdir -p $(PREFIX) \
+	fi
 	@cp -p $(SRC) $(PREFIX)/rbenv-clean
 	echo "rbenv-clean(1) installed"
 
