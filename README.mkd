@@ -3,8 +3,14 @@ like `gem-clean(1)` on steriods
 
 
 ## Installation
+
+### Via Git
 - `$ git clone https://github.com/sableloki/rbenv-clean && cd rbenv-clean`
 - `$ make install`
+
+### Via brew
+- `$ brew tap sableloki/tap`
+- `$ brew install rbenv-clean`
 
 ## Usage
 `rbenv-clean(1)` is a plugin the cleans all gems installed on your system on all systems
@@ -12,6 +18,7 @@ like `gem-clean(1)` on steriods
 __(truncated for documentations sake)__
 ```shell
 $ rbenv clean
+
 /usr/local/opt/rbenv
 ---------------------------------------
 2.1.5
