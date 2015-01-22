@@ -5,11 +5,11 @@ like `gem-clean(1)` on steriods
 ## Installation
 
 ### Via Git
-- `$ git clone https://github.com/sableloki/rbenv-clean && cd rbenv-clean`
+- `$ git clone https://github.com/nyumal/rbenv-clean && cd rbenv-clean`
 - `$ make install`
 
 ### Via brew
-- `$ brew tap sableloki/tap`
+- `$ brew tap nyumal/tap`
 - `$ brew install rbenv-clean`
 
 ## Usage
