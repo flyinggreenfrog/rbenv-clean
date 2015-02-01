@@ -47,3 +47,20 @@ test-unit (2.1.5.0)
 > --rubies
 
 optionally you can pass the `--rubies flag` to uninstall rubies aswell
+
+> --install-ruby <version>
+
+after you pass `--rubies` you can also pass in `--install-ruby <version>` and have rbenv install a version of ruby
+
+```shell
+
+# clean out gems
+rbenv clean
+
+# clean out gems and rubies
+rbenv clean --rubies
+
+# clean out gems, rubies and install ruby 2.2.0
+rbenv clean --rubies --install-ruby 2.2.0
+
+```
