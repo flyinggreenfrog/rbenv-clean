@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 #
-# Summary: Cleanup gems for all versions
+# Summary: clean out all gems for each installed ruby version
 #
 # Usage: rbenv clean [--rubies]
 #
-# rbenv-clean(1) cleans up all gems from all versions of installed rubies
+# Options:
+#    --rubies, -r    optionally clean up installed rubies aswell
+
+set -e
+[ -n "$RBENV_DEBUG" ] && set -x
 
 uninstall() {
     list=`gem list --no-versions`
