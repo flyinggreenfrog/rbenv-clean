@@ -1,4 +1,4 @@
-PREFIX = $(RBENV_ROOT)/plugins
+PREFIX = /usr/local/bin/ 
 SRC = ./bin/rbenv-clean.sh
 
 install:
