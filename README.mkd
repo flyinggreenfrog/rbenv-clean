@@ -4,13 +4,8 @@ like `gem-clean(1)` on steriods
 
 ## Installation
 
-### Via Git
 - `$ git clone https://github.com/nyumal/rbenv-clean && cd rbenv-clean`
 - `$ make install`
-
-### Via brew
-- `$ brew tap nyumal/tap`
-- `$ brew install rbenv-clean`
 
 ## Usage
 `rbenv-clean(1)` is a plugin the cleans all gems installed on your system on all systems
