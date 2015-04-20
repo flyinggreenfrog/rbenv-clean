@@ -22,9 +22,10 @@ remove_rubies() {
     RUBIES=`ls $RBENVPATH/versions`
     for r in $RUBIES; do
       echo '---------------------------------------'
-      echo $r
-      rm -rf $r
+      echo "Removing $r"
     done
+    rm -rf $RBENVPATH/versions/*
+
 }
 
 # rbenv versions --bare
