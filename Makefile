@@ -1,13 +1,16 @@
 PREFIX = /usr/local/bin
+RBENV_LIB_DIR = $HOME/.rbenv
+
 
 install:
+	mkdir -p $(RBENV_LIB_DIR)
 	install ./bin/rbenv-clean.sh $(PREFIX)/rbenv-clean
-	install ./lib/uninstaller.rb ~/.rbenv/rbenv_clean_gems.rb
+	install ./lib/uninstaller.rb $(RBENV_LIB_DIR)/rbenv_clean_gems.rb
 
 uninstall:
 	@rm -rf $(PREFIX)/rbenv-clean
-	@rm -rf ~/.rbenv/rbenv_clean_gems.rb
-	
+	@rm -rf $(RBENV_LIB_DIR)/rbenv_clean_gems.rb
+
 update:
 	make uninstall
 	make install
