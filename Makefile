@@ -1,5 +1,5 @@
 PREFIX = /usr/local/bin
-RBENV_LIB_DIR = $HOME/.rbenv
+RBENV_LIB_DIR = $(HOME)/.rbenv
 
 
 install:
