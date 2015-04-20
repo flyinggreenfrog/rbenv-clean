@@ -18,11 +18,14 @@ uninstall() {
 }
 
 remove_rubies() {
-    list=`rbenv versions`
-    for rb in $list; do
-        rbenv uninstall $rb
+    RBENVPATH=`rbenv root`
+    echo $RBENVPATH
+    RUBIES=`ls $RBENVPATH/versions`
+    for r in $RUBIES; do
+      echo '---------------------------------------'
+      echo $r
+      rm -rf $r
     done
-    rbenv versions
 }
 
 # rbenv versions --bare
@@ -40,7 +43,6 @@ for i in "$@"
 do
 case $i in
     -r|--rubies)
-    rbenv global system
     remove_rubies
     shift
     ;;
