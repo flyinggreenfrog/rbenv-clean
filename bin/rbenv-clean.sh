@@ -5,7 +5,7 @@
 # Usage: rbenv clean [opts]
 #
 # Options:
-#    --rubies, -r                       optionally clean up installed rubies aswell
+#    --rubies, -r                       optionally uninstall all rubies
 #    --install-ruby, -ir <version>      install a ruby after the clean process
 
 set -e
