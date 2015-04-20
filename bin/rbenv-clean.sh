@@ -39,7 +39,7 @@ done
 for i in "$@"
 do
 case $i in
-    -r=*|--rubies=*)
+    -r|--rubies)
     rbenv local system
     remove_rubies
     shift
