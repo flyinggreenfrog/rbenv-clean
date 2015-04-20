@@ -14,7 +14,6 @@ set -e
 uninstall() {
   ruby ~/.rbenv/rbenv_clean_gems.rb
   gem list
-  gem install bundler
 }
 
 remove_rubies() {
@@ -37,6 +36,7 @@ for r in $RUBIES; do
     echo $r
     rbenv local $r
     uninstall
+    gem install bundler
 done
 
 for i in "$@"
