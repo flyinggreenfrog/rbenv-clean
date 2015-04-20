@@ -12,12 +12,11 @@ set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
 uninstall() {
-    list=`gem list --no-versions`
-    for gem in $list; do
-        gem uninstall $gem -aIx
-    done
-    gem list
-    gem install bundler
+  for i in `gem list --no-versions`; do
+    gem uninstall -aIx $i
+  done
+  gem list
+  gem install bundler
 }
 
 remove_rubies() {
