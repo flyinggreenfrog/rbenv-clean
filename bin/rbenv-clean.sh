@@ -47,10 +47,10 @@ done
 RBENVPATH=`rbenv root`
 echo $RBENVPATH
 RUBIES=`ls $RBENVPATH/versions`
-for ruby in $RUBIES; do
+for r in $RUBIES; do
     echo '---------------------------------------'
-    echo $ruby
-    rbenv local $ruby
+    echo $r
+    rbenv local $r
     uninstall()
 done
 
