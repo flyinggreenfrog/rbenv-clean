@@ -30,7 +30,7 @@ do
 case $i in
     -r=*|--rubies=*)
     rbenv local system
-    remove_rubies()
+    remove_rubies
     shift
     ;;
     -ir=*|--install-ruby=*)
@@ -51,7 +51,7 @@ for r in $RUBIES; do
     echo '---------------------------------------'
     echo $r
     rbenv local $r
-    uninstall()
+    uninstall
 done
 
 # Remove .ruby-version after clean is done;
