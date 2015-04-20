@@ -2,7 +2,7 @@
 #
 # Summary: clean out all gems for each installed ruby version
 #
-# Usage: rbenv clean [--rubies] [--]
+# Usage: rbenv clean [opts]
 #
 # Options:
 #    --rubies, -r                       optionally clean up installed rubies aswell
