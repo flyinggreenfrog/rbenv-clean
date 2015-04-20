@@ -25,6 +25,17 @@ remove_rubies() {
     rbenv versions
 }
 
+# rbenv versions --bare
+RBENVPATH=`rbenv root`
+echo $RBENVPATH
+RUBIES=`ls $RBENVPATH/versions`
+for r in $RUBIES; do
+    echo '---------------------------------------'
+    echo $r
+    rbenv local $r
+    uninstall
+done
+
 for i in "$@"
 do
 case $i in
@@ -43,16 +54,6 @@ case $i in
 esac
 done
 
-# rbenv versions --bare
-RBENVPATH=`rbenv root`
-echo $RBENVPATH
-RUBIES=`ls $RBENVPATH/versions`
-for r in $RUBIES; do
-    echo '---------------------------------------'
-    echo $r
-    rbenv local $r
-    uninstall
-done
 
 # Remove .ruby-version after clean is done;
 rm -rf .ruby-version
