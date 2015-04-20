@@ -12,7 +12,7 @@ set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
 uninstall() {
-  for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
+  ruby ~/.rbenv/rbenv_clean_gems.rb
   gem list
   gem install bundler
 }
