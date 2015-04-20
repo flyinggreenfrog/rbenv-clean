@@ -40,7 +40,7 @@ for i in "$@"
 do
 case $i in
     -r|--rubies)
-    rbenv local system
+    rbenv global system
     remove_rubies
     shift
     ;;
