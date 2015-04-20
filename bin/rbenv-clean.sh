@@ -6,7 +6,7 @@
 #
 # Options:
 #    --rubies, -r                       optionally clean up installed rubies aswell
-#    --install-ruby, -ir <version>      install a ruby after the clean process (note: this will only work when called after --rubies i.e rbenv clean --rubies --install-ruby 2.2.0)
+#    --install-ruby, -ir <version>      install a ruby after the clean process
 
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
