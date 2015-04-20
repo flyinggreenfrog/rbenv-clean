@@ -25,6 +25,8 @@ remove_rubies() {
       echo "Removing $r"
     done
     rm -rf $RBENVPATH/versions/*
+    rbenv rehash
+    rbenv global system
 
 }
 
