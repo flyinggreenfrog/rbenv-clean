@@ -2,7 +2,7 @@
 #
 # Summary: clean out all gems for each installed ruby version
 #
-# Usage: rbenv clean [--rubies]
+# Usage: rbenv clean [--rubies] [--]
 #
 # Options:
 #    --rubies, -r                       optionally clean up installed rubies aswell
@@ -12,9 +12,7 @@ set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
 uninstall() {
-  for i in `gem list --no-versions`; do
-    gem uninstall -aIx $i
-  done
+  for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
   gem list
   gem install bundler
 }
@@ -27,7 +25,25 @@ remove_rubies() {
     rbenv versions
 }
 
-#rbenv versions --bare
+for i in "$@"
+do
+case $i in
+    -r=*|--rubies=*)
+    rbenv local system
+    remove_rubies()
+    shift
+    ;;
+    -ir=*|--install-ruby=*)
+    rbenv install ${i#*=}
+    shift
+    ;;
+    *)
+            # unknown option
+    ;;
+esac
+done
+
+# rbenv versions --bare
 RBENVPATH=`rbenv root`
 echo $RBENVPATH
 RUBIES=`ls $RBENVPATH/versions`
@@ -35,16 +51,8 @@ for ruby in $RUBIES; do
     echo '---------------------------------------'
     echo $ruby
     rbenv local $ruby
-    uninstall
+    uninstall()
 done
-
-if [[ $2 == "--rubies" || "-r" ]]; then
-    rbenv local system
-    remove_rubies
-fi
-if [[ $3 == "--install-ruby" || "-ir" ]]; then
-    rbenv install $4
-fi
 
 # Remove .ruby-version after clean is done;
 rm -rf .ruby-version
