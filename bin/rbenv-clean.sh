@@ -14,7 +14,7 @@ set -e
 uninstall() {
     list=`gem list --no-versions`
     for gem in $list; do
-        gem uninstall $gem -aIx
+        gem uninstall $gem -aIxf
     done
     gem list
     gem install bundler
