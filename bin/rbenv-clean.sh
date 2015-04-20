@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Summary: clean out all gems for each installed ruby version
+# Summary: Uninstall all non-default gems
 #
 # Usage: rbenv clean [opts]
 #
 # Options:
-#    --rubies, -r                       optionally uninstall all rubies
+#    --rubies, -r                       optionally uninstall all rub
 #    --install-ruby, -ir <version>      install a ruby after the clean process
 
 set -e
