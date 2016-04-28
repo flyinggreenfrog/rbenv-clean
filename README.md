@@ -4,7 +4,7 @@ like `gem-clean(1)` on steriods
 
 ## Installation
 
-- `$ git clone https://github.com/nyumal/rbenv-clean && cd rbenv-clean`
+- `$ git clone https://github.com/bernsie/rbenv-clean && cd rbenv-clean`
 - `$ make install`
 
 ## Usage
