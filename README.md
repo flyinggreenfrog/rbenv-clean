@@ -1,14 +1,13 @@
-# rbenv-clean(1)
-like `gem-clean(1)` on steriods
+# rbenv-clean
+like `gem-clean` on steriods
 
 
 ## Installation
 
-- `$ git clone https://github.com/bernsie/rbenv-clean && cd rbenv-clean`
-- `$ make install`
+- `$ git clone https://github.com/bernsie/rbenv-clean ~/.rbenv/plugins/rbenv-clean`
 
 ## Usage
-`rbenv-clean(1)` is a plugin the cleans all gems installed on your system on all systems
+`rbenv-clean` is a plugin the cleans all gems installed on your system on all systems
 
 __(truncated for documentations sake)__
 ```shell
@@ -42,25 +41,4 @@ psych (2.0.5)
 rake (10.1.0)
 rdoc (4.1.0)
 test-unit (2.1.5.0)
-```
-
-> --rubies
-
-optionally you can pass the `--rubies flag` to uninstall rubies aswell
-
-> --install-ruby <version>
-
-after you pass `--rubies` you can also pass in `--install-ruby <version>` and have rbenv install a version of ruby
-
-```shell
-
-# clean out gems
-rbenv clean
-
-# clean out gems and rubies
-rbenv clean --rubies
-
-# clean out gems, rubies and install ruby 2.2.0
-rbenv clean --rubies --install-ruby 2.2.0
-
 ```
