@@ -24,4 +24,4 @@ for ruby in $RUBIES; do
     uninstall
     gem install bundler
 done
-
+rm -rf .rbenv-version
