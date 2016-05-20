@@ -1,64 +1,27 @@
-#!/usr/bin/env bash
+\#!/usr/bin/env bash
 #
 # Summary: Uninstall all non-default gems
 #
-# Usage: rbenv clean [opts]
-#
-# Options:
-#    --rubies, -r                       optionally uninstall all rub
-#    --install-ruby, -ir <version>      install a ruby after the clean process
-
-set -e
-[ -n "$RBENV_DEBUG" ] && set -x
+# Usage: rbenv clean
 
 uninstall() {
-  ruby ~/.rbenv/rbenv_clean_gems.rb
-  gem list
-}
-
-remove_rubies() {
-    RBENVPATH=`rbenv root`
-    echo $RBENVPATH
-    RUBIES=`ls $RBENVPATH/versions`
-    for r in $RUBIES; do
-      echo '---------------------------------------'
-      echo "Removing $r"
+    list=`gem list --no-versions`
+    for gem in $list; do
+        gem uninstall $gem -aIx
     done
-    rm -rf $RBENVPATH/versions/*
-    rbenv rehash
-    rbenv global system
-
+    gem list
+    gem install bundler
 }
 
-# rbenv versions --bare
+#rbenv versions --bare
 RBENVPATH=`rbenv root`
 echo $RBENVPATH
 RUBIES=`ls $RBENVPATH/versions`
-for r in $RUBIES; do
+for ruby in $RUBIES; do
     echo '---------------------------------------'
-    echo $r
-    rbenv local $r
+    echo $ruby
+    rbenv local $ruby
     uninstall
     gem install bundler
 done
 
-for i in "$@"
-do
-case $i in
-    -r|--rubies)
-    remove_rubies
-    shift
-    ;;
-    -ir=*|--install-ruby=*)
-    rbenv install ${i#*=}
-    shift
-    ;;
-    *)
-            # unknown option
-    ;;
-esac
-done
-
-
-# Remove .ruby-version after clean is done;
-rm -rf .ruby-version
