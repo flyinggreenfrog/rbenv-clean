@@ -4,6 +4,8 @@
 #
 # Usage: rbenv clean
 
+set -e
+
 uninstall() {
     list=`gem list --no-versions`
     for gem in $list; do
