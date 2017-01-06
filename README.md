@@ -7,7 +7,7 @@ like `gem-clean` on steriods
 - `$ git clone https://github.com/bernsie/rbenv-clean ~/.rbenv/plugins/rbenv-clean`
 
 ## Usage
-`rbenv-clean` is a plugin the cleans all gems installed on your system on all systems
+`rbenv-clean` is a plugin the cleans all gems installed on your system across all installed ruby versions
 
 __(truncated for documentations sake)__
 ```shell
