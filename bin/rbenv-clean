@@ -25,5 +25,6 @@ for ruby in $RUBIES; do
     rbenv local $ruby
     uninstall
     gem install bundler
+    rm -f .rbenv-version
 done
-rm -rf .rbenv-version
+rm -f .rbenv-version
