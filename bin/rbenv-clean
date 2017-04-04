@@ -23,6 +23,6 @@ for ruby in $RUBIES; do
     echo $ruby
     rbenv local $ruby
     uninstall
-    rm -f .rbenv-version
+    rm -f .ruby-version
 done
-rm -f .rbenv-version
+rm -f .ruby-version
