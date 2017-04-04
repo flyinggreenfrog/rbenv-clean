@@ -12,7 +12,6 @@ uninstall() {
         gem uninstall $gem -aIx || true
     done
     gem list
-    gem install bundler
 }
 
 #rbenv versions --bare
@@ -24,7 +23,6 @@ for ruby in $RUBIES; do
     echo $ruby
     rbenv local $ruby
     uninstall
-    gem install bundler
     rm -f .rbenv-version
 done
 rm -f .rbenv-version
