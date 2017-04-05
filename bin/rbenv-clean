@@ -10,7 +10,9 @@ set -e
 uninstall() {
     list=`gem list --no-versions`
     for gem in $list; do
-        gem uninstall $gem -aIx || true
+        if [[ $gem != 'bundler' ]]; then
+            gem uninstall $gem -aIx || true
+        fi
     done
 }
 
