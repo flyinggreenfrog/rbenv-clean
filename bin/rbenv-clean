@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# Summary: Uninstall all non-default gems
+# Summary: Uninstall all non-default gems,
+#          then install bundler for every installed ruby version
 #
 # Usage: rbenv clean
 
@@ -11,7 +12,6 @@ uninstall() {
     for gem in $list; do
         gem uninstall $gem -aIx || true
     done
-    gem list
 }
 
 #rbenv versions --bare
@@ -23,6 +23,8 @@ for ruby in $RUBIES; do
     echo $ruby
     rbenv local $ruby
     uninstall
+    gem install bundler
+    gem list
     rm -f .ruby-version
 done
 rm -f .ruby-version
